@@ -1,0 +1,9 @@
+# Configuration for librarian-puppet. For example:
+#
+forge "http://forge.puppetlabs.com"
+
+mod "puppetlabs/stdlib"
+mod "puppetlabs/mysql"
+mod "puppetlabs/apache"
+mod "php",
+  :git => "https://github.com/example42/puppet-php"
