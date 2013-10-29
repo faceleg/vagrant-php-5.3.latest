@@ -7,4 +7,5 @@
 # Files
 .DS_Store
 Puppetfile.lock
+/user/*
 
