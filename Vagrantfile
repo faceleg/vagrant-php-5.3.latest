@@ -21,7 +21,7 @@ Vagrant::configure("2") do |config|
 
   config.vm.hostname = "www.bpb-vagrant.dev"
 
-  load File.expand_path("../user/vhosts.pp", __FILE__)
+  load File.expand_path("./user/vhosts.pp")
   config.hostsupdater.aliases = $vhosts.keys
 
   config.vm.provider :virtualbox do |vb|
