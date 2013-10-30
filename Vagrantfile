@@ -13,7 +13,7 @@ Vagrant::configure("2") do |config|
   config.vm.box = "Debian"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-607-x64-vbox4210.box"
 
-  load File.expand_path('../user/directories.pp')
+  load File.expand_path("./user/directories.pp")
   config.vm.synced_folder $projects, "/srv/www/", :nfs => true
   config.vm.synced_folder "./configuration/", "/configuration/", :nfs => true
 
