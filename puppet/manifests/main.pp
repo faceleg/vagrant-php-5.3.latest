@@ -1,5 +1,5 @@
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
-File { owner => 0, group => 0, mode => 0644 }
+File { owner => 501, group => 80, mode => 0644 }
 
 stage { 'first': }
 stage { 'last': }
