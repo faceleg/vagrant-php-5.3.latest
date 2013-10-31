@@ -34,9 +34,9 @@ Vagrant::configure("2") do |config|
   end
 
   # Prepare facts
-  $facts = "export FACTER_vhosts=\""
+  $facts = "export FACTER_vagrant_apache_vhosts=\""
   $vhosts.each do |name, directory|
-    $facts += name + "\",\"" + directory + " "
+    $facts += name + "," + directory + " "
   end
   $facts += "\";\n"
 

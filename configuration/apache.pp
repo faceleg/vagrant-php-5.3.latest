@@ -1,5 +1,6 @@
 class { 'apache':
     mpm_module => 'prefork',
+    user => 501
 }
 class { 'apache::mod::php': }
 
@@ -30,8 +31,8 @@ define generate_vhost {
   }
 }
 
-if $vhosts {
-  $vhosts_array = split($vhosts, " ")
+if $vagrant_apache_vhosts {
+  $vhosts_array = split($vagrant_apache_vhosts, " ")
   generate_vhost { $vhosts_array: }
 }
 
