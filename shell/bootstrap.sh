@@ -25,6 +25,5 @@ else
   cd $PUPPET_DIR && librarian-puppet update
 fi
 
-# now we run puppet
-sudo puppet apply -vv --modulepath=$PUPPET_DIR/modules/ $PUPPET_DIR/manifests/main.pp
+sudo -E puppet apply -vv --modulepath=$PUPPET_DIR/modules/ $PUPPET_DIR/manifests/main.pp
 
