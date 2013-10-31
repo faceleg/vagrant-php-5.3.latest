@@ -1,5 +1,5 @@
 class { 'apache':
-    mpm_module => 'prefork'
+    mpm_module => 'prefork',
 }
 class { 'apache::mod::php': }
 
@@ -25,9 +25,8 @@ define generate_vhost {
       docroot         => $vhost_docroot,
       logroot         => '/srv/log',
       override        => ['All'],
-      itk => {
-        user  => 'root',
-      },
+      docroot_owner   => 501,
+      docroot_group   => 80
   }
 }
 
