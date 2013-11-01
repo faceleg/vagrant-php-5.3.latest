@@ -5,9 +5,9 @@
 # https://github.com/joshmcarthur/vagrant-list
 # vagrant plugin install vagrant-list
 
-# Install hostmaster to automatically add hosts entries
-# https://github.com/mosaicxm/vagrant-hostmaster
-# vagrant plugin install vagrant-hostmaster
+# Install vagrant-hostsupdater to automatically add hosts entries
+# https://github.com/cogitatio/vagrant-hostsupdater
+# vagrant plugin install vagrant-hostsupdater
 
 Vagrant::configure("2") do |config|
   config.vm.box = "Debian"
