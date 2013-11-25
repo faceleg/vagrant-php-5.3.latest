@@ -17,7 +17,8 @@ Vagrant::configure("2") do |config|
   config.vm.synced_folder $projects, "/srv/www/", :nfs => true
   config.vm.synced_folder "./configuration/", "/configuration/", :nfs => true
 
-  config.vm.network :private_network, ip: "192.168.50.4"
+  config.vm.network :private_network,
+    ip: "192.168.50.4"
 
   config.vm.hostname = "www.bpb-vagrant.dev"
 
@@ -29,8 +30,9 @@ Vagrant::configure("2") do |config|
     vb.gui = false
     vb.customize [
       "modifyvm", :id,
-      "--memory", "512",
-      "--name", "bpb-php-53"
+      "--memory", "1024",
+      "--name", "bpb-php-53",
+      "--natdnshostresolver1", "on"
     ]
   end
 
