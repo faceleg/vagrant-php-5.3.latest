@@ -20,7 +20,7 @@ Vagrant::configure("2") do |config|
   config.vm.network :private_network,
     ip: "192.168.50.4"
 
-  config.vm.hostname = "www.bpb-vagrant.dev"
+  config.vm.hostname = "www.bpb-vagrant-php-53.dev"
 
   load File.expand_path("../user/vhosts.pp", __FILE__)
   config.hostsupdater.aliases = $vhosts.keys
