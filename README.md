@@ -14,6 +14,6 @@ Automatically creates DB & Virtual Hosts as specified in `user/*` files. See `us
  - Copy the contents of `/user_examples` to `/user`. Modify them as required
  - `cd` to the directory you cloned this repository to, execute:
 
-`vagrant up`
+   `vagrant up`
 
  - Wait
