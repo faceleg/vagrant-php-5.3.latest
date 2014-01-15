@@ -7,6 +7,7 @@ Automatically creates DB & Virtual Hosts as specified in `user/*` files. See `us
 
 # How to Install
 
+ - Clone this repository to your machine
  - Download & install Vagrant: http://www.vagrantup.com/downloads.html
  - Install [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)
  
