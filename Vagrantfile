@@ -18,9 +18,14 @@ Vagrant::configure("2") do |config|
   config.vm.synced_folder "./configuration/", "/configuration/", :nfs => true
 
   config.vm.network :private_network,
-    ip: "192.168.50.4"
+    ip: "192.168.53.53"
 
   config.vm.hostname = "www.bpb-vagrant-php-53.dev"
+  config.vm.network :forwarded_port,
+    guest: 22,
+    host: 2253,
+    id: "ssh",
+    auto_correct: true
 
   load File.expand_path("../user/vhosts.pp", __FILE__)
   config.hostsupdater.aliases = $vhosts.keys
