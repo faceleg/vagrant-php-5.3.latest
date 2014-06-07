@@ -8,6 +8,10 @@ PUPPET_DIR='/vagrant/puppet'
 GIT=/usr/bin/git
 APT_GET=/usr/bin/apt-get
 YUM=/usr/sbin/yum
+
+apt-get update
+apt-get -y upgrade
+
 if [ ! -x $GIT ]; then
     if [ -x $YUM ]; then
         yum -q -y install git
