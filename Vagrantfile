@@ -18,14 +18,9 @@ Vagrant::configure("2") do |config|
   config.vm.synced_folder "./configuration/", "/configuration/", :nfs => true
 
   config.vm.network :private_network,
-    ip: "192.168.53.53"
+    ip: "192.168.50.4"
 
-  config.vm.hostname = "www.bpb-vagrant-php-53.dev"
-  config.vm.network :forwarded_port,
-    guest: 22,
-    host: 2253,
-    id: "ssh",
-    auto_correct: true
+  config.vm.hostname = "www.bpb-vagrant.dev"
 
   load File.expand_path("../user/vhosts.pp", __FILE__)
   config.hostsupdater.aliases = $vhosts.keys
@@ -40,6 +35,9 @@ Vagrant::configure("2") do |config|
       "--natdnshostresolver1", "on"
     ]
   end
+
+  config.vm.provision :shell, :path => "shell/install-rvm.sh",  :args => "stable"
+  config.vm.provision :shell, :path => "shell/install-ruby.sh", :args => "1.9.3"
 
   # Prepare facts
   $facts = "export FACTER_vagrant_apache_vhosts=\""
@@ -59,4 +57,5 @@ Vagrant::configure("2") do |config|
 
   config.vm.provision :shell, :inline => $facts + $bootstrap;
 end
+
 
